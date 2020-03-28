@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "RunClasses",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/lesClasses.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "RunTri",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/triFunction.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "RunChainage",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/triChainage.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        }
+    ]
+}
