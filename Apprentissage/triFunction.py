@@ -1,3 +1,5 @@
+""" Fichier d'explications + exercices pour ce qui est des méthode de tri en python"""
+
 # itemgetter pour le tri des objets type tuple/list
 from operator import itemgetter
 # attrgetter pour le tri des objets fait maison 

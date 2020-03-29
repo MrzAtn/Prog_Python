@@ -1,0 +1,1 @@
+"""Fichier d'explications + exemple pour ce qui est des générateurs"""

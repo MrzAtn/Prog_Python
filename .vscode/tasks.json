@@ -38,6 +38,54 @@
             "problemMatcher":[
                 "$eslint-compact"
             ]
-        }
+        },
+        {
+            "label": "RunHerit",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/heritage.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "RunFor",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/boucleFor.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "RunIter",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/iter.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        },
+        {
+            "label": "RunGene",
+            "type": "shell",
+            "command": "C:/Users/anton/AppData/Local/Microsoft/WindowsApps/python.exe F:/Programmation/Prog_Python/Apprentissage/generator.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[
+                "$eslint-compact"
+            ]
+        }     
     ]
 }
