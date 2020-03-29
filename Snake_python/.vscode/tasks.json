@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run_Snake",
+            "type": "shell",
+            "command": "/anaconda3/envs/snake37/bin/python /Users/antoninmarzelle/Documents/Programation/ProG_PY/Snake_python/main.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        }
+    ]
+}
+
