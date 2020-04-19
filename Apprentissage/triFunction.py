@@ -17,18 +17,18 @@ class Etudiant:
 
 if __name__ == "__main__":
     
-    # etudiants = [("Clément", 14, 16),
-    #             ("Charles", 12, 15),
-    #             ("Oriane", 14, 18),
-    #             ("Thomas", 11, 12),
-    #             ("Damien", 12, 15),]       
+    etudiants = [("Clément", 14, 16),
+                ("Charles", 12, 15),
+                ("Oriane", 14, 18),
+                ("Thomas", 11, 12),
+                ("Damien", 12, 15),]       
     
     # 1er méthode: 
         # La fonction sort() permet de trier les list. De manière 
         # initiale la fonction va trier les éléments de la list  
         # par rapport à leur premier élément. 
-    # etudiants.sort()
-    # print(etudiants)
+    etudiants.sort()
+    print(etudiants)
 
     # 2eme méthode: 
         # La fonction sorted permet d'ordonner n'importe quel type 
@@ -38,14 +38,14 @@ if __name__ == "__main__":
 
 
     # Utilsation des fonctions de tri avec les objets
-    etudiants = [Etudiant("Clément", 14, 16),
-                Etudiant("Charles", 11, 15),
-                Etudiant("Oriane", 14, 18),
-                Etudiant("Thomas", 11, 12),
-                Etudiant("Damien", 12, 15),]
+    # etudiants = [Etudiant("Clément", 14, 16),
+    #             Etudiant("Charles", 11, 15),
+    #             Etudiant("Oriane", 14, 18),
+    #             Etudiant("Thomas", 11, 12),
+    #             Etudiant("Damien", 12, 15),]
     
-    print(etudiants)
+    # print(etudiants)
 
-    etudiants = sorted(etudiants, key=attrgetter("note", "age"), reverse=True)
+    # etudiants = sorted(etudiants, key=attrgetter("note", "age"), reverse=True)
 
-    print(etudiants)
+    # print(etudiants)

@@ -1,12 +1,10 @@
 """Fichier d'explications + exemple pour ce qui est des générateurs et iterateur"""
 
 class MyStr(str):
-    
     def __iter__(self):
         return MyIter(self)
 
-class MyIter:
-    
+class MyIter:   
     def __init__(self, myChaine):
         self.myChaine = myChaine
         self.position = len(self.myChaine) # On veut lire la chaine de droite à gauche
@@ -19,10 +17,26 @@ class MyIter:
         else:
             self.position -= 1 
             return self.myChaine[self.position]
-            
+    
+    def myGene(self, myChaine):
+        i = 0
+        lenStr = len(myChaine)
+        while i<lenStr:
+            print("OKOKO")
+            yield myChaine[i]
+            i += 1
+
+
+# Equivalent des itérateurs ci-dessus.    
+def myGene(chaine):
+    i = 0
+    lenStr = len(chaine)
+    while i<lenStr:
+        yield chaine[i]
+        i += 1
+
 
 if __name__ == "__main__":
-    a = MyStr("Salut !")
-    print(a)
-    for l in a:
+    
+    for l in MyStr("Hello"):
         print(l)

@@ -31,6 +31,7 @@ class EV:
 class Personne(EV):
 
     def __init__(self, nom):
+        super.__init__("Humanoïde")
         self.nom = nom
         self.prenom = "Polo"
     
@@ -46,6 +47,7 @@ class AgentSpecial(Personne):
         super().__init__(nom)
         self.matricule = matricule
 
+    # Fonction appelée lorsqu'on veut print l'objet
     def __str__(self):
             return "Agent Special: \n \t Matricule: {} \n \t Nom: {}".format(self.matricule, self.nom)
 
