@@ -38,10 +38,10 @@
 #         print(nb, end=" ")
 
 
-
 ### CAS PRATIQUE POUR DE LA BIG DATA ###
 
 import numpy as np
+import re
 
 big_data = """Le sénateur, dont il a été parlé plus haut, était un homme entendu qui 
     avait fait son chemin avec une rectitude inattentive à toutes ces rencontres qui font 
@@ -55,8 +55,6 @@ big_data = """Le sénateur, dont il a été parlé plus haut, était un homme en
     [...]
     (Les Misérables, Victor Hugo)
     """
-
-import re
 
 def is_part_of_a_word(character):
     return len(re.findall('\w', character, flags = re.UNICODE))  
@@ -87,4 +85,3 @@ print("'words' est encore un générateur. Le texte n'a toujours pas été lu")
 print("L'opération suivante va lancer la lecture du texte: ")
 a= [w for w in words]
 print(a)
-
