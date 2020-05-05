@@ -177,3 +177,112 @@ from random import randrange
 
 ############################# Exercices 5 Organisation GUI #############################
 
+"""L'organisation des widget composant notre interface peuvent être paramètrée via les méthodes grid()/pack() et place()"""
+
+# fen = Tk()
+
+# Label(master=fen, text="Nom:").grid(row=0, column=0) # Row == ligne / column == colonne 
+# Label(master=fen, text="Prénom:").grid(row=1, column=0)
+# Label(master=fen, text="Mail:").grid(row=2, column=0)
+# entr1 = Entry(fen) # Le widget Entry permet de créer des zone de de texte pour l'utilisateur 
+# entr2 = Entry(fen)
+# entr3 = Entry(fen)
+# entr1.grid(row=0, column=1)
+# entr2.grid(row=1, column=1)
+# entr3.grid(row=2, column=1)
+# can = Canvas(master=fen, bg="white", width=160, height=160)
+# photo = PhotoImage(file='')
+# can.create_image(80, 80, image=photo)
+# can.grid(row=0, column=2, rowspan=3, padx=2, pady=2) # padx et pady permette de créer un espace entre les widget
+# fen.mainloop()
+
+############################# Exercices 6 Déplacement d'objet #############################
+
+# L'exemple permet d'introduire les méthodes pour déplacer des objets une fenêtre Tkinter.
+
+# def mvt(gd, hb):
+# 	global x1, y1
+# 	x1, y1 = x1+gd, y1+hb
+# 	# La méthode coords permet de modifier directement les coordonnées d'un objet
+# 	canPP.coords(boule, x1, y1, x1+80, y1+80)
+
+# def depl_gauche():
+# 	mvt(-10, 0)
+
+# def depl_droit():
+# 	mvt(10, 0)
+
+# def depl_haut():
+# 	mvt(0, -10)
+
+# def depl_bas(): 
+# 	mvt(0, 10)
+
+
+# x1, y1 = 10, 10 # Init des coordonnées 
+# fen = Tk()
+# fen.title("Exemple Animation d'objet") # Titre de la fenêtre 
+# # Création du canvas pour l'animation de la boule 
+# canPP = Canvas(master=fen, width=300, height=300, bg="grey")
+# boule = canPP.create_oval(x1, y1, x1+80, y1+80, width=2, fill='red')
+# canPP.grid(row=1, column=2)
+# # Création d'un cavas pour la partie commande
+# canB = Canvas(master=fen, width=120, height=120)
+# canB.grid(row=1, column=1)
+# Button(master=canB, text='Quitter', command=fen.quit).grid(row=2, column=0, columnspan=3)
+# Button(master=canB, text='Left', command=depl_gauche).grid(row=1, column=0)
+# Button(master=canB, text='Up', command=depl_haut).grid(row=0, column=1)
+# Button(master=canB, text='Down', command=depl_bas).grid(row=1, column=1)
+# Button(master=canB, text='Right', command=depl_droit).grid(row=1, column=2)
+# fen.mainloop()
+
+############################# Exercices 7 Astres #############################
+
+def mvt(n, gd, hb):
+	global x, y
+	x[n], y[n] = x[n]+gd, y[n]+hb
+	# La méthode coords permet de modifier directement les coordonnées d'un objet
+	canPP.coords(boule, x1, y1, x1+80, y1+80)
+
+def depl_gauche():
+	mvt(-10, 0)
+
+def depl_droit():
+	mvt(10, 0)
+
+def depl_haut():
+	mvt(0, -10)
+
+def depl_bas(): 
+ 	mvt(0, 10)
+
+# Init des coordonnées
+x = [10, 200]
+y = [10, 200]
+fen = Tk()
+fen.title("Les Astres") # Titre de la fenêtre 
+# Création du canvas pour l'animation de la boule 
+canPP = Canvas(master=fen, width=300, height=300, bg="grey")
+boule1 = canPP.create_oval(x1, y1, x1+80, y1+80, width=2, fill='red')
+boule2 = canPP.create_oval(x2, y2, x2+80, y2+80, width=2, fill='black')
+canPP.grid(row=0, column=1)
+Button(master=fen, text='Quitter', command=fen.quit).grid(row=1, column=0, columnspan=3)
+# Création d'un cavas pour la partie commande de la première boule
+canB1 = Canvas(master=fen, width=120, height=120)
+canB1.grid(row=0, column=0)
+Button(master=canB1, text='Left', command=depl_gauche).grid(row=1, column=0)
+Button(master=canB1, text='Up', command=depl_haut).grid(row=0, column=1)
+Button(master=canB1, text='Down', command=depl_bas).grid(row=1, column=1)
+Button(master=canB1, text='Right', command=depl_droit).grid(row=1, column=2)
+# Création d'un cavas pour la partie commande de la première boule
+canB2 = Canvas(master=fen, width=120, height=120)
+canB2.grid(row=0, column=2)
+Button(master=canB2, text='Left', command=depl_gauche).grid(row=1, column=0)
+Button(master=canB2, text='Up', command=depl_haut).grid(row=0, column=1)
+Button(master=canB2, text='Down', command=depl_bas).grid(row=1, column=1)
+Button(master=canB2, text='Right', command=depl_droit).grid(row=1, column=2)
+fen.mainloop()
+
+
+
+
