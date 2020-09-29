@@ -111,57 +111,57 @@ from random import randrange
 
 ############################# Exercices 3 Damier #############################
 
-# def ligne_carre(x, y):
-#     global side 
-#     i = 0
-#     while i<5:
-#         can.create_rectangle(x+i*60, y, x+i*60+side, y+side, fill='black')
-#         i += 1
+def ligne_carre(x, y):
+    global side 
+    i = 0
+    while i<5:
+        can.create_rectangle(x+i*60, y, x+i*60+side, y+side, fill='black')
+        i += 1
 
-# def initDamier():
-#     global side
-#     y = 0
-#     while y < 10: # Ligne i
-#         if y%2: 
-#             x = 0
-#             # On construit notre damier ligne par ligne
-#             ligne_carre(x*side, y*side)
+def initDamier():
+    global side
+    y = 0
+    while y < 10: # Ligne i
+        if y%2: 
+            x = 0
+            # On construit notre damier ligne par ligne
+            ligne_carre(x*side, y*side)
 
-#         else: 
-#             x = 1
-#             ligne_carre(x*side, y*side)
-#         y += 1
+        else: 
+            x = 1
+            ligne_carre(x*side, y*side)
+        y += 1
 
-# def cercle(x, y, r): # Definition d'une méthode permettant le tracé d'un cercle à partir de son centre
-#     can.create_oval(x-r, y-r, x+r, y+r, outline='red', width='2')  
+def cercle(x, y, r): # Definition d'une méthode permettant le tracé d'un cercle à partir de son centre
+    can.create_oval(x-r, y-r, x+r, y+r, outline='red', width='2')  
 
-# def placerPion():
-#     global side
-#     x = side*randrange(10) + side/2
-#     y = side*randrange(10) + side/2
-#     print(x, y)
-#     cercle(x, y, 10)
+def placerPion():
+    global side
+    x = side*randrange(10) + side/2
+    y = side*randrange(10) + side/2
+    print(x, y)
+    cercle(x, y, 10)
 
 
-# side = 30
-# fen = Tk()
-# can = Canvas(master=fen, bg='white', height=300, width=300)
-# can.pack(side=TOP)
-# b1 = Button(master=fen,text="Quitter", command=fen.quit)
-# b1.pack(side=LEFT, pady=3)
-# b2 = Button(master=fen,text="Init Damier", command=initDamier)
-# b2.pack(side=RIGHT, pady=3)
-# b3 = Button(master=fen,text="Pion", command=placerPion)
-# b3.pack(side=RIGHT, pady=3)
-# fen.mainloop()
+side = 30
+fen = Tk()
+can = Canvas(master=fen, bg='white', height=300, width=300)
+can.pack(side=TOP)
+b1 = Button(master=fen,text="Quitter", command=fen.quit)
+b1.pack(side=LEFT, pady=3)
+b2 = Button(master=fen,text="Init Damier", command=initDamier)
+b2.pack(side=RIGHT, pady=3)
+b3 = Button(master=fen,text="Pion", command=placerPion)
+b3.pack(side=RIGHT, pady=3)
+fen.mainloop()
 
-############################# Exercices 4 Repare clic #############################
+############################ Exercices 4 Repare clic #############################
 
 # def cercle(x, y, r):
-#     can.create_oval(x-r, y-r, x+r, y+r, outline='red', width='2')  
+#     can.create_oval(x-r, y-r, x+r, y+r, outline='red', width='2')
 
-# def cliqueur(event): # Argument "event" spécifie que la fonction est lié à un évènement type 'Button-1' 
-#     chaine.configure(text='CLic détécté au coordonnées: X=' + str(event.x) +', Y='+ str(event.y))
+# def cliqueur(event): # Argument "event" spécifie que la fonction est lié à un évènement type 'Button-1'
+#     chaine.configure(text='Clic détécté au coordonnées: X=' + str(event.x) +', Y='+ str(event.y))
 #     cercle(event.x, event.y, 10)
 
 # fen = Tk()
@@ -238,51 +238,61 @@ from random import randrange
 
 ############################# Exercices 7 Astres #############################
 
-def mvt(n, gd, hb):
-	global x, y
-	x[n], y[n] = x[n]+gd, y[n]+hb
-	# La méthode coords permet de modifier directement les coordonnées d'un objet
-	canPP.coords(boule, x1, y1, x1+80, y1+80)
+# def mvt(n, gd, hb):
+# 	global x, y
+# 	x[n] += gd
+# 	y[n] += hb
+# 	# La méthode coords permet de modifier directement les coordonnées d'un objet
+# 	canPP.coords(boule[n], x[n], y[n], x[n]+80, y[n]+80)
 
-def depl_gauche():
-	mvt(-10, 0)
+# def depl_gauche1():
+# 	mvt(0, -10, 0)
 
-def depl_droit():
-	mvt(10, 0)
+# def depl_droit1():
+# 	mvt(0, 10, 0)
 
-def depl_haut():
-	mvt(0, -10)
+# def depl_haut1():
+# 	mvt(0, 0, -10)
 
-def depl_bas(): 
- 	mvt(0, 10)
+# def depl_bas1():
+#  	mvt(0, 0, 10)
 
-# Init des coordonnées
-x = [10, 200]
-y = [10, 200]
-fen = Tk()
-fen.title("Les Astres") # Titre de la fenêtre 
-# Création du canvas pour l'animation de la boule 
-canPP = Canvas(master=fen, width=300, height=300, bg="grey")
-boule1 = canPP.create_oval(x1, y1, x1+80, y1+80, width=2, fill='red')
-boule2 = canPP.create_oval(x2, y2, x2+80, y2+80, width=2, fill='black')
-canPP.grid(row=0, column=1)
-Button(master=fen, text='Quitter', command=fen.quit).grid(row=1, column=0, columnspan=3)
-# Création d'un cavas pour la partie commande de la première boule
-canB1 = Canvas(master=fen, width=120, height=120)
-canB1.grid(row=0, column=0)
-Button(master=canB1, text='Left', command=depl_gauche).grid(row=1, column=0)
-Button(master=canB1, text='Up', command=depl_haut).grid(row=0, column=1)
-Button(master=canB1, text='Down', command=depl_bas).grid(row=1, column=1)
-Button(master=canB1, text='Right', command=depl_droit).grid(row=1, column=2)
-# Création d'un cavas pour la partie commande de la première boule
-canB2 = Canvas(master=fen, width=120, height=120)
-canB2.grid(row=0, column=2)
-Button(master=canB2, text='Left', command=depl_gauche).grid(row=1, column=0)
-Button(master=canB2, text='Up', command=depl_haut).grid(row=0, column=1)
-Button(master=canB2, text='Down', command=depl_bas).grid(row=1, column=1)
-Button(master=canB2, text='Right', command=depl_droit).grid(row=1, column=2)
-fen.mainloop()
+# def depl_gauche2():
+# 	mvt(1, -10, 0)
 
+# def depl_droit2():
+# 	mvt(1, 10, 0)
 
+# def depl_haut2():
+# 	mvt(1, 0, -10)
 
+# def depl_bas2():
+#  	mvt(1, 0, 10)
 
+# # Init des coordonnées
+# x = [10, 200]
+# y = [10, 200]
+# fen = Tk()
+# fen.title("Les Astres") # Titre de la fenêtre
+# # Création du canvas pour l'animation de la boule
+# canPP = Canvas(master=fen, width=300, height=300, bg="grey")
+# boule1 = canPP.create_oval(x[0], y[0], x[0]+80, y[0]+80, width=2, fill='red')
+# boule2 = canPP.create_oval(x[1], y[1], x[1]+80, y[1]+80, width=2, fill='black')
+# boule = [boule1, boule2]
+# canPP.grid(row=0, column=1)
+# Button(master=fen, text='Quitter', command=fen.quit).grid(row=1, column=0, columnspan=3)
+# # Création d'un cavas pour la partie commande de la première boule
+# canB1 = Canvas(master=fen, width=120, height=120)
+# canB1.grid(row=0, column=0)
+# Button(master=canB1, text='Left', command=depl_gauche1).grid(row=1, column=0)
+# Button(master=canB1, text='Up', command=depl_haut1).grid(row=0, column=1)
+# Button(master=canB1, text='Down', command=depl_bas1).grid(row=1, column=1)
+# Button(master=canB1, text='Right', command=depl_droit1).grid(row=1, column=2)
+# # Création d'un cavas pour la partie commande de la première boule
+# canB2 = Canvas(master=fen, width=120, height=120)
+# canB2.grid(row=0, column=2)
+# Button(master=canB2, text='Left', command=depl_gauche2).grid(row=1, column=0)
+# Button(master=canB2, text='Up', command=depl_haut2).grid(row=0, column=1)
+# Button(master=canB2, text='Down', command=depl_bas2).grid(row=1, column=1)
+# Button(master=canB2, text='Right', command=depl_droit2).grid(row=1, column=2)
+# fen.mainloop()
